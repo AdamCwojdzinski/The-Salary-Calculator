@@ -1,0 +1,18 @@
+<div class="container">
+<h2 class="text-center">Zobacz swoje zarobki</h2>
+  <form [formGroup]="calculatorForm" (ngSubmit)="getCalculateData()">
+    <div class="form-group">
+      <label>Wybierz karj:</label>
+        <select class="form-control" formControlName="countryId" required>
+          <option selected *ngFor="let country of countries" value="{{country.id}}">{{country.name}}</option>
+        </select>
+      <label>Podaj stawkę brutto za dzień:</label>
+          <input type="text" placeholder="Kwota brutto z dzień" class="form-control" formControlName="grossSalaryPerDay" required>
+    </div>
+    <button class="btn btn-success">Oblicz</button>
+  </form>
+<div>
+  <label>Twoje zarobki na mieciąć netto:</label>
+  <label>{{returnedData}}</label>
+</div>
+</div>

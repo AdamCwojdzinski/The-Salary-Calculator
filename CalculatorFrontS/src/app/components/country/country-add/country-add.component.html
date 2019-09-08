@@ -1,0 +1,21 @@
+<div class="container">
+  <form [formGroup]="addCountryGroup" (ngSubmit)="onSubmitNewCountryForm()">
+    <div class="form-group">
+      <label for="name">Nazwa kraju</label>
+      <input type="text" class="form-control" formControlName="name" id="name" placeholder="Nazwa kraju" required>
+    </div>
+    <div class="form-group">
+      <label for="rateCode">Wybierz obowiązującą walutę dodawanego kraju</label>
+      <input type="text" class="form-control" formControlName="rateCode" id="rateCode" placeholder="Waluta kraju" required>
+    </div>
+    <div class="form-group">
+      <label for="tax">Wartość podatku w procentach</label>
+      <input type="text" class="form-control" formControlName="tax" id="tax" placeholder="Wartość Podatku" required>
+    </div>
+    <div class="form-group">
+      <label for="fixedCost">Koszty satłe umowy</label>
+      <input type="text" class="form-control" formControlName="fixedCost" id="fixedCost" placeholder="Koszty stałe" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Dadaj kraj</button>
+  </form>
+</div>

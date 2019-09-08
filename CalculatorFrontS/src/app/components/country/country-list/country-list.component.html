@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <button class="btn btn-primary" routerLink="/country/new">Dodaj Państwo</button>
+  </div>
+  <div class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Lp.</th>
+          <th scope="col">Nazwa kraju</th>
+          <th scope="col">Stawka podatku w %</th>
+          <th scope="col">Kod waluty</th>
+          <th scope="col">Koszty stałe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let country of countries, let i = index">
+          <td>{{i+1}}</td>
+          <td>{{country.name}}</td>
+          <td>{{country.tax}}</td>
+          <td>{{country.rateCode}}</td>
+          <td>{{country.fixedCost}}</td>
+          <td>
+            <button class="btn btn-success" (click)="editCountry(country)">Zmień</button>
+            <button class="btn btn-danger" style="margin-left: 20px" (click)="removeCountry(country)">Usuń</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

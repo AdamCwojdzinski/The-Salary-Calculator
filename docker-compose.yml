@@ -1,0 +1,15 @@
+version: '3'
+services:
+    back-end:
+      build: ./Calculator_S
+      ports:
+        - "8080:8080"
+
+    front-end:
+      build: ./CalculatorFrontS
+      ports:
+        - "4200:80"
+      depends_on:
+        - back-end
+      restart: always
+
