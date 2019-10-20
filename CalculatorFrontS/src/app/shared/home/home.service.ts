@@ -5,7 +5,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
   providedIn: 'root'
 })
 export class HomeService {
-  public PRODUCT_API = '/api';
+  public PRODUCT_API = 'http://localhost:8080/api';
 
   constructor(private http: HttpClient) { }
 
